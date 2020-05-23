@@ -8,6 +8,7 @@ snake[0]={
 	y: 8 * box		
 }
 
+let direction = "right";
 
 function criarBG(){
 	
@@ -34,9 +35,30 @@ function setSpeed(){
 //passar o parametro no lugar da velocidade set interval
 */
 
+function iniciarJogo(){
+	
+	criarBG();
+	criarCobrinha();	
+	
+	let snakex = snake[0].x;
+	let snakey = snake[0].y;
+	
+	if(direction =="right") snakex += box;
+	if(direction =="left") snakex -= box;
+	if(direction =="up") snakey += box;
+	if(direction =="down") snakey -= box;
+	
+	snake.pop();
+	
+	let newHead = {
+		x: snakex,
+		y: snakey
+			
+	}
+	
+	snake.unshift(newHwad);
+}
 
-criarBG();
-criarCobrinha();
-
+let jogo = setInterval(iniciarJogo, 100);
 // BG = background
 //cobrinha e uma array de coordenadas, onde adicionamos no inicio e removemos no fim para que se movimente.
