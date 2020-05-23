@@ -10,6 +10,11 @@ snake[0]={
 
 let direction = "right";
 
+let food = {
+		x: Math.floor(Math.random() *15 +1) *box,
+		y: Math.floor(Math.random() *15 +1) *box
+}
+
 function criarBG(){
 	
 	context.fillStyle = "black";
@@ -25,6 +30,12 @@ function criarCobrinha (){
     }
 }
 
+
+function criarComida(){
+        context.fillStyle = "red";
+        context.fillRect(food.x, food.y, box, box);
+	
+}
 
 // definir as accoes realizadas pelas teclas de direccao do key board
 document.addEventListener('keydown',update);
@@ -54,6 +65,7 @@ function iniciarJogo(){
 	
 	criarBG();
 	criarCobrinha();	
+	criarComida();
 	
 	let snakex = snake[0].x;
 	let snakey = snake[0].y;
