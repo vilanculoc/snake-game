@@ -58,10 +58,20 @@ function setSpeed(){
 */
 
 function iniciarJogo(){
+		
 	if(snake[0].x > 15*box && direction =="right") snake[0].x = 0;
 	if(snake[0].x < 0 && direction =="left") snake[0].x =16*box;
 	if(snake[0].y > 15*box && direction =="down") snake[0].y =0;
 	if(snake[0].x < 0 && direction =="up") snake[0].y = 16 * box;
+	
+	
+	 for(i = 1; i < snake.length; i++){
+	        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+	            clearInterval(jogo);
+	            alert('Game Over :(');
+	        }
+	    }
+	
 	
 	criarBG();
 	criarCobrinha();	
@@ -94,6 +104,12 @@ function iniciarJogo(){
 	snake.unshift(newHead);
 }
 
-let jogo = setInterval(iniciarJogo, 200);
+//get dificuldade from botao e set tempo
+//after gameover reiniciar com botao
+let tempo =200;
+let jogo = setInterval(iniciarJogo, tempo);
+
+
+
 // BG = background
 //cobrinha e uma array de coordenadas, onde adicionamos no inicio e removemos no fim para que se movimente.
