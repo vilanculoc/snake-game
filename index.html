@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
 <head>
-     <meta charset='UTF-8'>
+     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie-edge">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="style.css">
      <script defer src="main.js"></script>
      <title>Snake Game</title>
@@ -11,7 +11,12 @@
 </head>
 
 <body>
-    <canvas id="snake" widht="512" height="s12"></canvas>
+    <canvas id="snake" width="512" height="512"></canvas>
+    <br><br>
+    <button id="dificuldade" onclick="escolher" onclick="setSpeed()"> Escolher Velocidade</button>
+    <button id="iniciar" onclick="start()"> Iniciar</button>
+   
+    
 
 </body>
 </html>
