@@ -25,6 +25,17 @@ function criarCobrinha (){
     }
 }
 
+
+
+document.addEventListener('keydown',update);
+
+function update(event){
+	if(event.keyCode ==37 && direction != "right") direction ="left";  
+	if(event.keyCode ==38 && direction != "down") direction ="up";		
+	if(event.keyCode ==39 && direction != "left") direction ="right";
+	if(event.keyCode ==40 && direction != "up") direction ="down";
+}
+
 /*Var velocidade = document.getElementById("dificuldade");
 function setSpeed(){
 	if (dificuldade.value=1){
@@ -43,10 +54,10 @@ function iniciarJogo(){
 	let snakex = snake[0].x;
 	let snakey = snake[0].y;
 	
-	if(direction =="right") snakex += box;
+	if(direction =="right")snakex += box;
 	if(direction =="left") snakex -= box;
-	if(direction =="up") snakey += box;
-	if(direction =="down") snakey -= box;
+	if(direction =="up") snakey -= box;
+	if(direction =="down") snakey += box;
 	
 	snake.pop();
 	
@@ -56,9 +67,9 @@ function iniciarJogo(){
 			
 	}
 	
-	snake.unshift(newHwad);
+	snake.unshift(newHead);
 }
 
-let jogo = setInterval(iniciarJogo, 100);
+let jogo = setInterval(iniciarJogo, 200);
 // BG = background
 //cobrinha e uma array de coordenadas, onde adicionamos no inicio e removemos no fim para que se movimente.
