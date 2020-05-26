@@ -95,7 +95,7 @@ function iniciarJogo(){
 	snake.unshift(newHead);
 }
 
-let tempo = 120;
+let tempo = 200;
 
 //Still not working
 let velocidade = document.getElementById("dificuldade").value;
@@ -115,7 +115,7 @@ function setSpeed(velocidade){
 }
 
 //passar o parametro no lugar da velocidade set interval
-console.log(tempo);
+
 
 let jogo = setInterval(iniciarJogo, tempo);
 
