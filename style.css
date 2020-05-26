@@ -1,0 +1,15 @@
+body{
+    border: inset;
+    height: 95vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ebebeb;
+    color: rgb(52, 165, 52);
+}
+
+canvas{
+border-style: inset;
+}

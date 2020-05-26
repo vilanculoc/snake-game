@@ -11,10 +11,21 @@
 </head>
 
 <body>
-    <canvas id="snake" width="512" height="512"></canvas>
-    <br><br>
-    <button id="dificuldade" onclick="escolher" onclick="setSpeed()"> Escolher Velocidade</button>
-    <button id="iniciar" onclick="start()"> Iniciar</button>
+     <h2>Snake Game</h2>
+    <canvas id="snake" width="512" height="512" border="inset"></canvas>
+    <br>
+      
+ <form>
+    <button id="iniciar()" onclick="start()"> Iniciar</button>
+  <label for="Diiculdade">Nivel de dificuldade:</label>
+  <select id="dificuldade" name="Nivel">
+    <option value="1">Simples</option>
+    <option value="2">Medio</option>
+    <option value="3">Dificil</option>
+  </select>
+  <button type="button" id="dificuldade" onclick="setSpeed(velocidade)"> Escolher</button>
+<form>
+  
    
     
 

@@ -26,7 +26,7 @@ function criarBG(){
 function criarCobrinha (){
     for(i = 0; i < snake.length; i++){
         context.fillStyle = "gray";
-        context.fillRect(snake[i].x, snake[i].y, box, box);
+        context.fillRect(snake[i].x, snake[i].y, box-1, box-1);
     }
 }
 
@@ -47,15 +47,6 @@ function update(event){
 	if(event.keyCode ==40 && direction != "up") direction ="down";
 }
 
-/*Var velocidade = document.getElementById("dificuldade");
-function setSpeed(){
-	if (dificuldade.value=1){
-	
-	}
-}
-
-//passar o parametro no lugar da velocidade set interval
-*/
 
 function iniciarJogo(){
 		
@@ -104,12 +95,32 @@ function iniciarJogo(){
 	snake.unshift(newHead);
 }
 
-//get dificuldade from botao e set tempo
-//after gameover reiniciar com botao
-let tempo =200;
+let tempo = 120;
+
+//Still not working
+let velocidade = document.getElementById("dificuldade").value;
+
+function iniciar(){tempo = 120;}
+
+function setSpeed(velocidade){
+	if (velocidade.value==1){
+	tempo =500;
+	} else if (velocidade.value==2){
+	tempo =300;
+	} else if (velocidade.value==3){
+	tempo =100;
+	} else{
+	tempo =200;
+	} 
+}
+
+//passar o parametro no lugar da velocidade set interval
+console.log(tempo);
+
 let jogo = setInterval(iniciarJogo, tempo);
 
 
-
+//get dificuldade from botao e set tempo
+//after gameover reiniciar com botao
 // BG = background
 //cobrinha e uma array de coordenadas, onde adicionamos no inicio e removemos no fim para que se movimente.
