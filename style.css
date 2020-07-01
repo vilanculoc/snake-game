@@ -1,15 +1,52 @@
-body{
-    border: inset;
-    height: 95vh;
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color:#ebebeb;
-    color: rgb(52, 165, 52);
+*{
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color:rgb(49, 54, 50);
+}
+
+#ambiente{
+height: 92vh;
+width: 65vw;
+float:right;
+}
+
+#definicoes{
+height: 92vh;
+width: 30vw;
+margin-left: 10px;
+text-align: left;
+}
+
+#dificuldade{
+font-size:18px;
+}
+
+.formatadiv{
+		border-style: none;
+        border-width: none;
+		border-color: none;
+		border-bottom: none;
+		display: inline-block;
+		float: left;
+		text-align: center;
+		font-size: 25px;
+
 }
 
 canvas{
+border-style: dashed;
+}
+
+h1{
 border-style: inset;
+border-color: rgb(71, 79, 73);
+color: rgb(52, 165, 52);
+text-align: center;
+}
+
+
+textarea{
+border-style: inset;
+font-size: 25px;
 }

@@ -1,3 +1,6 @@
+var score = document.getElementById("score");
+var playPouse = document.getElementById("iniciar");
+var legenda = document.getElementById("legenda");
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32; // tamanho de cada quadradinho e o canvas tera 16 quadradinhos de 32 px cada
@@ -84,23 +87,47 @@ function iniciarJogo(){
 	else{
 		food.x = Math.floor(Math.random() *15 +1) *box,
 		food.y = Math.floor(Math.random() *15 +1) *box
+		score.value ++                                   //contar pontuacao por comidas ingeridas
 	}
 	
 	let newHead = {
 		x: snakex,
 		y: snakey
-			
+
 	}
 	
 	snake.unshift(newHead);
 }
 
-let tempo = 200;
+var tempo = 200;
+let jogo
+
+
+function start(){
+if(playPouse.src.match(/play/)){
+playPouse.src = "pause.png";
+jogo = setInterval(iniciarJogo, tempo);
+legenda.innerHTML="Pausar"
+//score.value ++
+}else{
+playPouse.src = "play.png";
+//score.value ++
+clearInterval(jogo);
+legenda.innerHTML="Jogar"
+}
+}
+
+function criaAmbiente(){
+criarBG();
+criarCobrinha();
+criarComida();
+}
+
+
 
 //Still not working
 let velocidade = document.getElementById("dificuldade").value;
-
-function iniciar(){tempo = 120;}
+var vel = document.getElementById("teste");
 
 function setSpeed(velocidade){
 	if (velocidade.value==1){
@@ -111,13 +138,12 @@ function setSpeed(velocidade){
 	tempo =100;
 	} else{
 	tempo =200;
-	} 
+	}
+
+	vel.innerHTML=tempo;
 }
 
 //passar o parametro no lugar da velocidade set interval
-
-
-let jogo = setInterval(iniciarJogo, tempo);
 
 
 //get dificuldade from botao e set tempo

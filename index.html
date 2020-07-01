@@ -10,24 +10,33 @@
 
 </head>
 
-<body>
-     <h2>Snake Game</h2>
-    <canvas id="snake" width="512" height="512" border="inset"></canvas>
-    <br>
-      
- <form>
-    <button id="iniciar()" onclick="start()"> Iniciar</button>
-  <label for="Diiculdade">Nivel de dificuldade:</label>
-  <select id="dificuldade" name="Nivel">
-    <option value="1">Simples</option>
-    <option value="2">Medio</option>
-    <option value="3">Dificil</option>
-  </select>
-  <button type="button" id="dificuldade" onclick="setSpeed(velocidade)"> Escolher</button>
-<form>
-  
-   
-    
+<body onload="criaAmbiente()">
+  <div id="container">
+      <div id ="definicoes" class="formatadiv">
+        <h1>Snake Game</h1>
+        <br>
+            <label for="pontuacao">Pontua&ccedil;&atilde;o</label>
+            <textarea id="score" rows="1" cols="2"></textarea>
+        <br><br>
+        <form>
+         <select id="dificuldade" name="Nivel">
+            <option>Nivel de dificuldade:</option>
+            <option value="1">Simples</option>
+            <option value="2">Medio</option>
+            <option value="3">Dificil</option>
+            </select>
+         <button type="button" id="dificuldade" onclick="setSpeed(velocidade)"> Escolher</button>
+        </form>
+        <br>
+              <h3 id="legenda">Iniciar Jogo</h3>
+           <img src="play.png" id="iniciar" width="100" onclick="start()">
 
+      </div>
+        <br>
+        <br>
+      <div id="ambiente" class="formatadiv">
+        <canvas id="snake" width="512" height="512" border="inset"></canvas>
+      </div>
+  </div>
 </body>
 </html>
