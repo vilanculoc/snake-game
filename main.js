@@ -28,7 +28,7 @@ function criarBG(){
 
 function criarCobrinha (){
     for(i = 0; i < snake.length; i++){
-        context.fillStyle = "gray";
+        context.fillStyle = "green";
         context.fillRect(snake[i].x, snake[i].y, box-1, box-1);
     }
 }
@@ -100,10 +100,33 @@ function iniciarJogo(){
 }
 
 var tempo = 200;
-let jogo
+let jogo;
+var nivel;
+var velocidade;
+var vel;
 
 
-function start(){
+function setSpeed(){
+nivel = document.getElementById("dificuldade");
+velocidade = nivel.options[nivel.selectedIndex].text;
+vel = document.getElementById("testinho");
+
+	if (velocidade.match(/Simples/)){
+	tempo =500;
+	} else if (velocidade.match(/Medio/)){
+	tempo =300;
+	} else if (velocidade.match(/Dificil/)){
+	tempo =100;
+	}
+	vel.innerHTML=tempo;
+	return tempo
+}
+
+
+
+function start(tempo){
+setSpeed(tempo);
+//vel.innerHTML=tempo;
 if(playPouse.src.match(/play/)){
 playPouse.src = "pause.png";
 jogo = setInterval(iniciarJogo, tempo);
@@ -126,22 +149,7 @@ criarComida();
 
 
 //Still not working
-let velocidade = document.getElementById("dificuldade").value;
-var vel = document.getElementById("teste");
 
-function setSpeed(velocidade){
-	if (velocidade.value==1){
-	tempo =500;
-	} else if (velocidade.value==2){
-	tempo =300;
-	} else if (velocidade.value==3){
-	tempo =100;
-	} else{
-	tempo =200;
-	}
-
-	vel.innerHTML=tempo;
-}
 
 //passar o parametro no lugar da velocidade set interval
 

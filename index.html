@@ -18,18 +18,17 @@
             <label for="pontuacao">Pontua&ccedil;&atilde;o</label>
             <textarea id="score" rows="1" cols="2"></textarea>
         <br><br>
-        <form>
-         <select id="dificuldade" name="Nivel">
-            <option>Nivel de dificuldade:</option>
-            <option value="1">Simples</option>
-            <option value="2">Medio</option>
-            <option value="3">Dificil</option>
+         <select id="dificuldade" onchange="setSpeed()">
+            <option>-- Nivel de dificuldade:-- </option>
+            <option>Simples</option>
+            <option>Medio</option>
+            <option>Dificil</option>
             </select>
-         <button type="button" id="dificuldade" onclick="setSpeed(velocidade)"> Escolher</button>
-        </form>
+         <!--button type="button" id="" onclick="setSpeed(velocidade)"> Escolher</button-->
+            <p id="testinho" hidden> Testinho </p>
         <br>
               <h3 id="legenda">Iniciar Jogo</h3>
-           <img src="play.png" id="iniciar" width="100" onclick="start()">
+           <img src="play.png" id="iniciar" width="100" onclick="start(tempo)">
 
       </div>
         <br>
