@@ -6,4 +6,4 @@ Actualmente, o jogo conta com um botao start/play/pause e pontução.<br>
 pode aceder e testar o jogo atraves do seguinte link: [Snake the game](https://vilanculoc.github.io/snake-game/)
 
 Abaixo o overview do layout do jogo.<br>
-![snake-game](https://drive.google.com/file/d/18SfNBcl2HLRub0HjefkAxBpSEiUTYAT9/view?usp=sharing)
+![snake-game](https://github.com/vilanculoc/snake-game/blob/master/snake-game.PNG)
